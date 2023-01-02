@@ -1,0 +1,15 @@
+D:\mojProjects\CASample\src\Common\CASample.Application\bin\Debug\net6.0\CASample.Application.deps.json
+D:\mojProjects\CASample\src\Common\CASample.Application\bin\Debug\net6.0\CASample.Application.dll
+D:\mojProjects\CASample\src\Common\CASample.Application\bin\Debug\net6.0\CASample.Application.pdb
+D:\mojProjects\CASample\src\Common\CASample.Application\bin\Debug\net6.0\CASample.Domain.dll
+D:\mojProjects\CASample\src\Common\CASample.Application\bin\Debug\net6.0\CASample.Domain.pdb
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.csproj.AssemblyReference.cache
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.AssemblyInfoInputs.cache
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.AssemblyInfo.cs
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.csproj.CoreCompileInputs.cache
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.csproj.CopyComplete
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.dll
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\refint\CASample.Application.dll
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\CASample.Application.pdb
+D:\mojProjects\CASample\src\Common\CASample.Application\obj\Debug\net6.0\ref\CASample.Application.dll

@@ -1,0 +1,10 @@
+D:\mojProjects\CASample\src\Common\CASample.Domain\bin\Debug\netstandard2.1\CASample.Domain.deps.json
+D:\mojProjects\CASample\src\Common\CASample.Domain\bin\Debug\netstandard2.1\CASample.Domain.dll
+D:\mojProjects\CASample\src\Common\CASample.Domain\bin\Debug\netstandard2.1\CASample.Domain.pdb
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.csproj.AssemblyReference.cache
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.AssemblyInfoInputs.cache
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.AssemblyInfo.cs
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.csproj.CoreCompileInputs.cache
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.dll
+D:\mojProjects\CASample\src\Common\CASample.Domain\obj\Debug\netstandard2.1\CASample.Domain.pdb

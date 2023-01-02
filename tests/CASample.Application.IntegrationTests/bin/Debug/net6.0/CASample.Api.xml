@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CASample.Api</name>
+    </assembly>
+    <members>
+        <member name="T:CASample.Api.Controllers.BaseApiController">
+            <summary>
+            Base api controller
+            </summary>
+        </member>
+        <member name="P:CASample.Api.Controllers.BaseApiController.Mediator">
+            <summary>
+            Mediator sender
+            </summary>
+        </member>
+        <member name="T:CASample.Api.Controllers.CitiesController">
+            <summary>
+            Cities
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Controllers.CitiesController.GetAllCities(System.Threading.CancellationToken)">
+            <summary>
+            Get all cities
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Controllers.CitiesController.GetCityById(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get city by Id
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Controllers.CitiesController.Create(CASample.Application.Cities.Commands.Create.CreateCityCommand,System.Threading.CancellationToken)">
+            <summary>
+            Create city
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Controllers.CitiesController.Update(CASample.Application.Cities.Commands.Update.UpdateCityCommand,System.Threading.CancellationToken)">
+            <summary>
+            Update city
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Controllers.CitiesController.Delete(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Delete city by Id
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CASample.Api.Controllers.DistrictsController">
+            <summary>
+            District
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Controllers.DistrictsController.Get(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get district by Id
+            </summary>
+            <param name="id"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Controllers.DistrictsController.Create(CASample.Application.Districts.Commands.Create.CreateDistrictCommand,System.Threading.CancellationToken)">
+            <summary>
+            Create district
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CASample.Api.Controllers.LoginController">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Controllers.LoginController.Login(CASample.Application.ApplicationUser.Queries.GetToken.GetTokenQuery,System.Threading.CancellationToken)">
+            <summary>
+            Login and get JWT token email: test@test.com password: Matech_1850
+            </summary>
+            <param name="query"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CASample.Api.Controllers.VillagesController">
+            <summary>
+            Villages
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Controllers.VillagesController.GetAllVillagesWithPagination(CASample.Application.Villages.Queries.GetVillagesWithPagination.GetAllVillagesWithPaginationQuery,System.Threading.CancellationToken)">
+            <summary>
+            Get all villages with pagination
+            </summary>
+            <param name="query"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CASample.Api.Controllers.WeatherForecastController">
+            <summary>
+            Weather Forecast
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Controllers.WeatherForecastController.Get">
+            <summary>
+            Basic and static weather forecast
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Controllers.WeatherForecastController.GetCurrentWeather(CASample.Application.WeatherForecasts.Queries.GetCurrentWeatherForecastQuery.GetCurrentWeatherForecastQuery,System.Threading.CancellationToken)">
+            <summary>
+            Get current forecast from open weather services.
+            </summary>
+            <param name="query"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CASample.Api.Filters.ApiExceptionFilterAttribute">
+            <summary>
+            Exception filters
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Filters.ApiExceptionFilterAttribute.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Filters.ApiExceptionFilterAttribute.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            On exception event
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:CASample.Api.Program">
+            <summary>
+            Starter
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Program.Main(System.String[])">
+            <summary>
+            Main function
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CASample.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            WebHost builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CASample.Api.Services.CurrentUserService">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Services.CurrentUserService.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="P:CASample.Api.Services.CurrentUserService.UserId">
+            <summary>
+            Current userId
+            </summary>
+        </member>
+        <member name="T:CASample.Api.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:CASample.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:CASample.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Services
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:CASample.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

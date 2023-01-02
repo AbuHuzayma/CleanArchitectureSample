@@ -1,0 +1,10 @@
+﻿using System;
+using CASample.Application.Common.Interfaces;
+
+namespace CASample.Infrastructure.Services
+{
+    public class DateTimeService : IDateTime
+    {
+        public DateTime Now => DateTime.Now;
+    }
+}
