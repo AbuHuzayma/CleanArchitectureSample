@@ -1,5 +1,7 @@
 # CleanArchitectureSample
 This is a solution template for Clean Architecture implementation with .NET Core and overview.
+
+
  
 Architecture importance:
 
@@ -8,33 +10,46 @@ It is the set of structures needed to reason about the software system, and comp
 In today’s software development world, requirements change, environments change, team members change, technologies change, and so should the architecture of our systems.
 The architecture defines the parts of a system that are hard and costly to change. Therefore we are in need of a clean, simple, flexible, evolvable, and agile architecture to be able to keep up with all the changes surrounding us.
 
-Clean architecture:
+## Overview
 
-Entities: Entities encapsulate enterprise-wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.
-Use cases: Use cases orchestrate the flow of data to and from the entities, and direct those entities to use their enterprise-wide business rules to achieve the goals of the use cases.
-Interface adapters: Adapters that convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as a database or the Web.
-Frameworks and drivers: Glue code to connect UI, databases, devices etc. to the inner circles.
-Program Flow: Starts on the outside and ends on the outside, but can go through several layers (user clicks a button, use case loads some entities from DB, entities decide something that is presented on the UI)
-Dependency management:
-The concentric circles represent different areas of software. In general, the further in you go, the higher level the software becomes. The outer circles are mechanisms. The inner circles are policies.
-Source code dependencies can only point inwards. Nothing in an inner circle can know anything at all about something in an outer circle. Use dependency inversion to build up the system (classes in an outer circle implement interfaces of an inner circle or listen to events from inner circles).
-Independent of frameworks:
-The architecture does not depend on the existence of some library of feature-laden software. This allows you to use such frameworks as tools, rather than having to cram your system into their technical constraints.
+### Domain
+
+This will contain all entities, enums, exceptions, interfaces, types and logic specific to the domain layer.
+
+### Application
+
+This layer contains all application logic. It is dependent on the domain layer, but has no dependencies on any other layer or project. This layer defines interfaces that are implemented by outside layers. For example, if the application need to access a notification service, a new interface would be added to application and an implementation would be created within infrastructure.
+
+### Infrastructure
+
+This layer contains classes for accessing external resources such as file systems, web services, smtp, and so on. These classes should be based on interfaces defined within the application layer.
+
+### WebApi
+
+This layer is a web api application based on ASP.NET 6.0.x. This layer depends on both the Application and Infrastructure layers, however, the dependency on Infrastructure is only to support dependency injection. Therefore only *Startup.cs* should reference Infrastructure.
+
+### Logs
+
+Logging into Elasticsearch using Serilog and viewing logs in Kibana.
+
 
 Testable:
 
 The business rules and use cases can be tested without UI, database, Web server, or any other external element.
 
-# Technologies used:
-ASP.NET Core
-Entity Framework Core
-MediatR
-Swagger
-Jwt Token Authentication
-Api Versioning
-FluentValidation
-Serilog
-AutoMapper
+This is a solution template for creating a ASP.NET Core Web API following the principles of Clean Architecture. Create a new project based on this template by clicking the above **Use this template** button or by installing and running the associated NuGet package (see Getting Started for full details). 
+
+
+## Technologies
+* [ASP.NET Core 6](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
+* [Entity Framework Core 6](https://docs.microsoft.com/en-us/ef/core/)
+* [MediatR](https://github.com/jbogard/MediatR)
+* [Mapster](https://github.com/MapsterMapper/Mapster)
+* [FluentValidation](https://fluentvalidation.net/)
+* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/moq) & [Respawn](https://github.com/jbogard/Respawn)
+* [Elasticsearch](https://www.elastic.co/), [Serilog](https://serilog.net/), [Kibana](https://www.elastic.co/kibana)
+* [Docker](https://www.docker.com/)
+
 
 
 # Software Development Best Practices and Design Principles used:
@@ -52,4 +67,37 @@ Modular Design
 Custom Exceptions
 Custom Exception Handling
 PipelineBehavior for Validation and Performance tracking.
+
+
+
+### Database Configuration
+
+The template is configured to use an in-memory database by default. This ensures that all users will be able to run the solution without needing to set up additional infrastructure (e.g. SQL Server).
+
+If you would like to use SQL Server, you will need to update **WebApi/appsettings.json** as follows:
+
+```json
+  "DbProvider": SqlServer
+```
+
+`DbProvider` could be `Sqlite`, `SqlServer`, `Npgsql` by default, which could be extended to more database providers that EF Core supports. 
+
+Verify that the **DefaultConnection** connection string within **appsettings.json** points to a valid SQL Server instance.
+
+Verify that the **DefaultConnection_Postgres** connection string within **appsettings.json** points to a valid PostgresSQL instance.
+
+Verify that the **DefaultConnection_Sqlite** connection string within **appsettings.json** points to a valid Sqlite connection or in-memory instance.
+
+When you run the application the database will be automatically created (if necessary) and the latest migrations will be applied.
+
+
+### Database Migrations
+
+By moving to multiple databases migrations, every db provider will have one migrations project as below.
+
+* `Sqlite`: CleanArchitecture.Infrastructure.Sqlite
+* `SqlServer`: CleanArchitecture.Infrastructure.SqlServer
+* `Npgsql`: CleanArchitecture.Infrastructure.Npgsql
+
+
 
